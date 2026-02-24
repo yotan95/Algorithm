@@ -1,5 +1,4 @@
 import java.util.*;
-import java.io.*;
 
 class Solution {
     public long solution(int n, int[] times) {
@@ -12,22 +11,22 @@ class Solution {
         long mid;
         
         while(start <= end){
-            mid = (start + end) / 2;
+            mid = (start + end) /2;
             long sum = 0;
             
             for(int time : times){
-                sum += mid / time;
-                
+                sum += mid/time;
             }
+            
             if(sum >= n){
                 answer = mid;
-                end = mid - 1;
-            } else {
+                end = mid -1;
+            } else{
                 start = mid + 1;
             }
             
+            
         }
-        
         
         return answer;
     }
